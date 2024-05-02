@@ -1,0 +1,35 @@
+La línea if __name__ == "__main__": junto con main() se utiliza comúnmente en Python para 
+definir un punto de entrada principal en un script o módulo. Esta construcción es una convención 
+en Python que se emplea para distinguir si un archivo Python se está ejecutando como un programa 
+principal o si está siendo importado como un módulo en otro script.
+
+Veamos en detalle cómo funciona y por qué se utiliza:
+
+    Ejecución como Programa Principal:
+    Cuando ejecutas un archivo Python directamente desde la línea de comandos o desde un entorno 
+    de desarrollo integrado (IDE), Python asigna automáticamente el nombre especial __main__ al 
+    script que está siendo ejecutado. Por lo tanto, la variable __name__ dentro del script se establece en "__main__".
+
+    Importación como Módulo:
+    Cuando importas un archivo Python como un módulo en otro script, la variable __name__ dentro 
+    del módulo importado se establece con el nombre real del archivo (es decir, el nombre del módulo). 
+    No se establece como "__main__".
+
+    Uso de if __name__ == "__main__"::
+    La línea if __name__ == "__main__": permite ejecutar cierto código solo cuando el archivo Python se 
+    ejecuta directamente como un programa principal (es decir, no se importa como un módulo). El bloque 
+    de código que sigue a esta línea se ejecutará únicamente en este caso.
+
+    Por lo tanto, al escribir if __name__ == "__main__": main(), estamos diciendo que queremos llamar a 
+    la función main() solo cuando el script se ejecute directamente como un programa principal. Si el script 
+    es importado como un módulo en otro archivo Python, la función main() no se ejecutará automáticamente.
+
+    Esto es útil porque te permite escribir un script de Python que pueda ser utilizado tanto como un programa 
+    independiente como un módulo reutilizable. La función main() contiene la lógica principal del programa y se 
+    ejecutará solo cuando el script se ejecute directamente. Si el script se importa en otro lugar, las definiciones 
+    de funciones y clases dentro del script estarán disponibles para su uso, pero la ejecución de main() no se 
+    activará automáticamente.
+
+En resumen, if __name__ == "__main__": main() es una forma estándar en Python de controlar la ejecución del código 
+principal en un script, asegurando que ciertas partes del script solo se ejecuten cuando el script se ejecute 
+directamente como un programa principal.
